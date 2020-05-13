@@ -1,7 +1,5 @@
 server:
   port: 9094
-  servlet:
-    context-path: /gateway
 
 eureka:
   instance:
@@ -14,9 +12,6 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
-
-zuul:
-  sensitive-headers: Cookie
 
 authserver:
   hostname: http://localhost:9092
