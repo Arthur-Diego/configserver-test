@@ -1,19 +1,17 @@
 server:
-  port: 9099
+  port: 9098
 
 eureka:
   instance:
-    prefer-ip-address: true
+    hostname: localhost
+    port: 9091
   client:
-    service-url:
-      defaultZone: http://localhost:8081/eureka/
-    fetch-registry: true
-    register-with-eureka: true
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
-
-zuul:
-  sensitive-headers: Cookie
 
 authserver:
   hostname: http://localhost:9092
