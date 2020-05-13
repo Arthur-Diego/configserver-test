@@ -1,10 +1,11 @@
 server:
-  port: 9099
+  port: 8080
+  servlet:
+    context-path: /gateway
 
 eureka:
   instance:
-    hostname: localhost
-    port: 9091
+    prefer-ip-address: true
   client:
     registerWithEureka: true
     fetchRegistry: false
