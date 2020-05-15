@@ -9,17 +9,6 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
- 
- zuul:
-  ignoredServices: '*'
-  routes:
-    authserver:
-      path: /**
-      serviceId: authserver
-      
-    apipedido:
-      path: /order/**
-      serviceId: apipedido
       
 server:
   port: 8622
