@@ -1,5 +1,5 @@
 server:
-  port: 9098
+  port: 8080
 
 eureka:
   instance:
@@ -12,13 +12,23 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
+ 
+ zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
 
-zuul:
-  sensitive-headers: Cookie
+  routes:
+    auth-service:
+      path: /uaa/** #path that will be intercepted
+      url: auth-service #which url the request will e mapped to
+      stripPrefix: false #if zuul should replace the "/uaa/" segment
+      sensitiveHeaders:
 
-authserver:
-  hostname: http://localhost:9092
-security:
-  oauth2:
-    resource:
-      userInfoUri: ${authserver.hostname}/user
+    account-service:
+      path: /accounts/**
+      serviceId: account-service
+      stripPrefix: false
+      sensitiveHeaders:
+
