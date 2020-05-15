@@ -1,6 +1,3 @@
-server:
-  port: 8080
-
 eureka:
   instance:
     hostname: localhost
@@ -32,3 +29,5 @@ eureka:
       serviceId: arthur-order-service
       stripPrefix: false
       sensitiveHeaders:
+server:
+  port: 8080
