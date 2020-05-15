@@ -20,12 +20,10 @@ eureka:
       path: /** #path that will be intercepted
       url: arthur-auth-server #which url the request will e mapped to
       stripPrefix: false #if zuul should replace the "/uaa/" segment
-      sensitiveHeaders:
     arthur-order-service:
       path: /order/**
       serviceId: arthur-order-service
       stripPrefix: false
-      sensitiveHeaders:
       
 server:
   port: 8080
