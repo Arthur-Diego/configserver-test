@@ -21,14 +21,14 @@ eureka:
 
   routes:
     auth-service:
-      path: /uaa/** #path that will be intercepted
-      url: auth-service #which url the request will e mapped to
+      path: /** #path that will be intercepted
+      url: arthur-auth-server #which url the request will e mapped to
       stripPrefix: false #if zuul should replace the "/uaa/" segment
       sensitiveHeaders:
 
     account-service:
-      path: /accounts/**
-      serviceId: account-service
+      path: /order/**
+      serviceId: arthur-order-service
       stripPrefix: false
       sensitiveHeaders:
 
