@@ -13,14 +13,14 @@ eureka:
  zuul:
   ignoredServices: '*'
   routes:
-    arthur-auth-server:
+    auth-server:
       path: /**
-      serviceId: arthur-auth-server
+      serviceId: authserver
       stripPrefix: false
       
-    arthur-order-service:
+    order-service:
       path: /order/**
-      serviceId: arthur-order-service
+      serviceId: apipedido
       stripPrefix: false
       
 server:
