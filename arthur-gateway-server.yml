@@ -16,12 +16,10 @@ eureka:
     authserver:
       path: /**
       serviceId: authserver
-      stripPrefix: false
       
     apipedido:
       path: /order/**
       serviceId: apipedido
-      stripPrefix: false
       
 server:
   port: 8622
