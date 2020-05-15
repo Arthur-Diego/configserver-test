@@ -1,4 +1,6 @@
 server:
+  servlet:
+      context-path: /order
   port: 9093
 
 eureka:
@@ -30,5 +32,9 @@ authserver:
   hostname: http://localhost:9092
 security:
   oauth2:
-    resource:
-      userInfoUri: ${authserver.hostname}/user
+    client:
+      clientId: coderef
+      clientSecret: 123
+      accessTokenUri: http://localhost:9092/oauth/token
+      grant-type: client_credentials
+      scope: server
