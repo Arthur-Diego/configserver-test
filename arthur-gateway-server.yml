@@ -12,4 +12,13 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
-      
+    
+zuul:
+  sensitive-headers: Cookie
+
+authserver:
+  hostname: http://localhost:9092
+security:
+  oauth2:
+    resource:
+      user-info-uri: ${authserver.hostname}/user
