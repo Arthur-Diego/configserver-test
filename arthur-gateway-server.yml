@@ -17,4 +17,4 @@ zuul:
   routes:
     arthur-auth-server:
       path: /**
-      serviceId: arthur-auth-server
+      serviceId: authserver
