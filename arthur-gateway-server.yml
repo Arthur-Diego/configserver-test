@@ -13,12 +13,12 @@ eureka:
  zuul:
   ignoredServices: '*'
   routes:
-    auth-server:
+    authserver:
       path: /**
       serviceId: authserver
       stripPrefix: false
       
-    order-service:
+    apipedido:
       path: /order/**
       serviceId: apipedido
       stripPrefix: false
