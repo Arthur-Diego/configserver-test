@@ -18,8 +18,8 @@ eureka:
   routes:
     arthur-auth-server:
       path: /**
-      url: arthur-auth-server
-      serviceId: false
+      serviceId: arthur-auth-server
+      stripPrefix: false
       
     arthur-order-service:
       path: /order/**
