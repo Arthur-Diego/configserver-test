@@ -12,9 +12,6 @@ eureka:
  
  zuul:
   ignoredServices: '*'
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
   routes:
     arthur-auth-server:
       path: /**
