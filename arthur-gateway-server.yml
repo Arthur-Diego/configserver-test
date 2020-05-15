@@ -20,13 +20,13 @@ eureka:
     socket-timeout-millis: 20000
 
   routes:
-    auth-service:
+    arthur-auth-server:
       path: /** #path that will be intercepted
       url: arthur-auth-server #which url the request will e mapped to
       stripPrefix: false #if zuul should replace the "/uaa/" segment
       sensitiveHeaders:
 
-    account-service:
+    arthur-order-service:
       path: /order/**
       serviceId: arthur-order-service
       stripPrefix: false
