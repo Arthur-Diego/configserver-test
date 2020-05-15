@@ -19,11 +19,12 @@ eureka:
     arthur-auth-server:
       path: /**
       url: arthur-auth-server
-      stripPrefix: false
+      serviceId: false
+      
     arthur-order-service:
       path: /order/**
       serviceId: arthur-order-service
       stripPrefix: false
       
 server:
-  port: 8080
+  port: 8622
